@@ -11,11 +11,11 @@ module.exports = (password) => {
 
     const schema = new passwordValidator();
     schema
-        .is().min(8)
+        .is().min(12)
         .is().max(100)
         .has().uppercase()
         .has().lowercase()
-        .has().digits(2)
+        .has().digits(1)
         .has().not().spaces()
         .is().not().oneOf(['Passw0rd', 'Password123', '12345678', 'azertyui']);
 

@@ -47,7 +47,7 @@ module.exports = (req, res, next) => {
 
         try {
             await sharp(req.file.buffer)
-                .resize(600, 600, {
+                .resize(206, 260, {
                     fit: 'inside',
                 })
                 .webp({ quality: 20 })

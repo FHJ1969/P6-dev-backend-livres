@@ -12,17 +12,26 @@
 
 ## Installation et démarrage du projet 
 
->* Intégrez le fichier .env à l'intérieur du dossier backend
->* Positionnez vous à partir du terminal dans le dossier "backend" et effectuez ces commmandes : `npm install` (installations des dépendances) puis `nodemon start`(lancement du server express) <br />
->* Dirigez vous ensuite à partir du terminal dans le dossier "frontend" et effectuez ces commandes : `npm install` (installation des dépendances) puis `npm start`(lancement du serveur node) <br />
->* Un serveur node sur votre port 3000 devrait maintenant automatiquement se lancer, dans le cas contraire, rendez-vous à cette URL : http://localhost:3000/
+### Installation des dépendances 
+
+>* Renommez votre fichier ".env.test" en ".env" et indiquez-y les bonnes informations 
+>* Lancez `npm install` dans les dossiers "backend" puis "frontend"
+
+### Lancement du projet
+
+>* Lancement du serveur express : `nodemon start` (dans le dossier backend)
+>* Lancement du serveur node : `npm start` (dans le dossier frontend)
+>Un serveur node sur votre port 3000 devrait maintenant automatiquement se lancer, dans le cas contraire, rendez-vous à cette URL : http://localhost:3000/
 
 ## Parcours utilisateur et consignes d'utilisations 
 
-### Inscription et connexion 
+### Inscription 
 
+>* Renseingez un e-mail unique et un mot de passe valide respectant ces critères : 1 chiffre, 1 majuscule et 1 miniscule, compris entre 12 et 100 caractères.
+
+### Connexion
 >* Au moment du démmarage de l'application, vous aurez besoin de vous inscrire ou/et de vous connecter pour accéder au fonctionnalité de l'application (création, modification, suppression de vos pages et notation de celles des autres utilisateurs) <br />
->* L'adresse e-mail fourni doit être unique, le mot de passe doit être compris entre 8 et 100 caractères, il doit contenir une majuscule et une minuscule ainsi que 2 chiffres, il ne doit pas faire parti de cette liste de mot passe : 'Passw0rd', 'Password123', '12345678', 'azertyui'. <br />
+>* L'adresse e-mail fourni doit être unique, le mot de passe doit être compris entre 12 et 100 caractères, il doit contenir une majuscule et une minuscule ainsi que 1 chiffre, il ne doit pas faire parti de cette liste de mot passe : 'Passw0rd', 'Password123', '12345678', 'azertyui'. <br />
 >* La durée de connexion pour une session est de 24h.
 
 
