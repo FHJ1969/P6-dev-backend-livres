@@ -1,8 +1,10 @@
-﻿const multer = require('multer');
+﻿//Importations des dépendances
+const multer = require('multer');
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
+//Définition des formats d'image acceptés pour la conversion et redimension qui suit
 const MIME_TYPES = {
     'image/jpg': 'jpg',
     'image/jpeg': 'jpg',
@@ -13,6 +15,7 @@ const storage = multer.memoryStorage();
 
 const upload = multer({ storage: storage }).single('image');
 
+//Module prenant en charge la conversion en WEBP et la redimension de l'image fournit par le formulaire
 module.exports = (req, res, next) => {
     upload(req, res, async (err) => {
         if (err)             

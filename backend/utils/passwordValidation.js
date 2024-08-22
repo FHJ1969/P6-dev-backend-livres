@@ -1,10 +1,7 @@
-﻿const passwordValidator = require('password-validator');
+﻿//Importation des dépendances
+const passwordValidator = require('password-validator');
 
-/**
- * Teste la validité d'un mot de passe
- * @param password Mot de passe à valider
- * @returns {{isSuccess: boolean, failedReason: string}}
- */
+//Prerequis d'un mot de passe valide
 module.exports = (password) => {
     if (!password)
         return {

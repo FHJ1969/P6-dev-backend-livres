@@ -2,12 +2,14 @@
 const fs = require('fs');
 const Book = require('../models/Book.js');
 
+//controller prenant en charge la récupération de tous les livres
 exports.getAllBooks = (req, res, next) => {
     Book.find()
         .then(books => res.status(200).json(books))
         .catch(error => res.status(400).json({error}));
 };
 
+//controller prenant en charge la création d'un livre
 exports.createBook = (req, res, next) => {
     const bookObject = JSON.parse(req.body.book);
     delete bookObject._id;
@@ -27,12 +29,14 @@ exports.createBook = (req, res, next) => {
         })
 }
 
+//controller prenant en charge la récupération d'un livre
 exports.getBook = (req, res, next) => {
     Book.findOne({_id: req.params.id})
         .then(book => res.status(200).json(book))
         .catch(error => res.status(404).json({error}));
 };
 
+//controller prenant en charge la modification d'un livre
 exports.updateBook = (req, res, next) => {
     const bookObject = req.file ? {
         ...JSON.parse(req.body.book),
@@ -64,6 +68,7 @@ exports.updateBook = (req, res, next) => {
         });
 };
 
+//controller prenant en charge la suppression d'un livre
 exports.deleteBook = (req, res, next) => {
     Book.findOne({_id: req.params.id})
         .then(book => {
@@ -85,6 +90,7 @@ exports.deleteBook = (req, res, next) => {
         });
 };
 
+//controller prenant en charge la notation d'un livre
 exports.rateBook = (req, res, next) => {
     Book.findOne({_id: req.params.id})
         .then(book => {
@@ -114,6 +120,7 @@ exports.rateBook = (req, res, next) => {
         });
 };
 
+//controller prenant en charge la récupération des 3 livres les mieux notés
 exports.getBestRatingBooks = (req, res, next) => {
     Book.find().sort({ averageRating: 'desc'}).skip(0).limit(3)
         .then(filteredBooks => res.status(200).json(filteredBooks))

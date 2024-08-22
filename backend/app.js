@@ -1,4 +1,5 @@
-﻿const mongoose = require('mongoose');
+﻿//Importation des dépendances
+const mongoose = require('mongoose');
 const express = require('express');
 const booksRoutes = require('./routes/books');
 const userRoutes = require('./routes/user');
@@ -8,15 +9,15 @@ const app = express();
 
 require('dotenv').config()
 
+//Connexion à la BD MongoDB
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-//Permet de transformer le corps de la requête en objet JSON pour pouvoir l'exploiter (Avoir accès au corps de la requete)
+//Transformation du corps de la requête en objet JSON
 app.use(express.json());
 
-//Middleware pour gérer les erreurs CORS
-//Route globale (sans chemin)
+//Paramètres globaux
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
+//Définition des routes
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/auth', userRoutes);
 app.use('/api/books', booksRoutes);

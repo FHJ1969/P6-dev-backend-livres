@@ -1,7 +1,9 @@
-﻿const express = require('express');
+﻿//Importation des dépendances
+const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user');
 
+//Routes POST
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
 

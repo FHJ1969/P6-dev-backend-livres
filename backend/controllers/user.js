@@ -1,18 +1,13 @@
-﻿const jwt = require('jsonwebtoken');
+﻿//Importation des dépendances
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/User.js');
 const validator = require('email-validator');
 const passwordValidator = require('../utils/passwordValidation')
 require('dotenv').config()
 
-/**
- * Crée un nouvel utilisateur au sein de l'application
- * @param req
- * @param res
- * @param next
- */
+//controller prenant en charge la création d'un compte
 exports.signup = (req, res, next) => {
-    
     const email = req.body.email;
     if (!email) {
         return res.status(400).json({ error: 'Le mail est obligatoire !' })
@@ -40,12 +35,7 @@ exports.signup = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
-/**
- * Authentifie l'utilisateur sur l'application
- * @param req
- * @param res
- * @param next
- */
+//controller prenant en charge la connexion à un compte
 exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email })
         .then(user => {

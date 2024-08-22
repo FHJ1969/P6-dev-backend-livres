@@ -1,5 +1,7 @@
-﻿const mongoose = require('mongoose');
+﻿//Importation des dépendances
+const mongoose = require('mongoose');
 
+//Création d'un schéma mongoose définissant les informations a stocker dans la DB pour chaque livres
 const bookSchema = mongoose.Schema({
     userId: {type: String, required: true},
     title: {type: String, required: true},
