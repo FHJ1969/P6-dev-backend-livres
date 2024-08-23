@@ -30,8 +30,7 @@
 >* Renseingez un e-mail unique et un mot de passe valide respectant ces critères : 1 chiffre, 1 majuscule et 1 miniscule, compris entre 12 et 100 caractères.
 
 ### Connexion
->* Au moment du démmarage de l'application, vous aurez besoin de vous inscrire ou/et de vous connecter pour accéder au fonctionnalité de l'application (création, modification, suppression de vos pages et notation de celles des autres utilisateurs) <br />
->* L'adresse e-mail fourni doit être unique, le mot de passe doit être compris entre 12 et 100 caractères, il doit contenir une majuscule et une minuscule ainsi que 1 chiffre, il ne doit pas faire parti de cette liste de mot passe : 'Passw0rd', 'Password123', '12345678', 'azertyui'. <br />
+>* Au moment du démmarage de l'application, vous aurez besoin de vous connecter pour accéder au fonctionnalités de l'application (création, modification, suppression de vos pages et notation de celles des autres utilisateurs) <br />
 >* La durée de connexion pour une session est de 24h.
 
 
